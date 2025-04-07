@@ -5,6 +5,7 @@
   imports = [
     ./firefox.nix
     ./librewolf.nix
+    ./brave.nix
     ./font.nix
     ./gtk.nix
     ./pavucontrol.nix
