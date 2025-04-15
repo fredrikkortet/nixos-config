@@ -12,6 +12,7 @@
     ./keepassxc.nix
     ./zathura.nix
     ./alacritty.nix
+    ./logseq.nix
   ];
 
   home.packages = [
