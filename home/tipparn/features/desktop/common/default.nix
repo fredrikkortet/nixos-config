@@ -6,6 +6,7 @@
     ./firefox.nix
     ./librewolf.nix
     ./brave.nix
+    ./libreoffice.nix
     ./font.nix
     ./gtk.nix
     ./pavucontrol.nix
@@ -19,6 +20,7 @@
     pkgs.libnotify
     pkgs.dunst
     pkgs.handlr-regex
+    pkgs.arandr
     (pkgs.writeShellScriptBin "xterm" ''
       handlr launch x-scheme-handler/terminal -- "$@"
     '')
