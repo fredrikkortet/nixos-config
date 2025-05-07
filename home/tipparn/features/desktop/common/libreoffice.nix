@@ -1,5 +1,6 @@
 {
+    pkgs,
     ...
 }: {
-    programs.libreoffice-qt6-fresh.enable = true;
+    home.packages = with pkgs; [libreoffice-qt6-fresh];
 }
