@@ -6,7 +6,7 @@
         ./global
         ./features/desktop/common
         #./features/desktop/hyprland
-        #./features/desktop/wireless
+        ./features/desktop/wireless
     ];
 
     monitors = [
