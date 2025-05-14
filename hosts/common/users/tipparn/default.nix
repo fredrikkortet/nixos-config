@@ -14,6 +14,7 @@ in {
             "video"
             "wheel"
             "network"
+            "networkmanager"
         ];
         hashedPassword = "$6$l9NT4neC12LICEzS$60H5FEb08V5iMpb1WveIuB8RQHp7PXG5TsO0cnw9xf4bdUNXBYhXqeUirOgngPko3WCB/MXVT.1I5QAxfmZkh0";
     

@@ -18,7 +18,8 @@
         ../common/optional/qtile.nix
         ../common/optional/polkit.nix
         ../common/optional/inputdevice.nix
-        ../common/optional/wireless.nix
+        #../common/optional/wireless.nix
+        ../common/optional/networkmanager.nix
     ];
 
     networking = {
