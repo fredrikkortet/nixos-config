@@ -40,6 +40,8 @@
         nix-diff
         luajitPackages.luarocks
 
+        # Languages
+        libgcc
 
     ];
 }

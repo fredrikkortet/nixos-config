@@ -44,4 +44,6 @@ nix develop
 
 `nix build` (or shell or run) To build and use packages
 
+`nix flake update` update your flake inputs
 
+`nixos-rebuild switch --upgrade --flake ".#yourconfig"` Rebuild your system
