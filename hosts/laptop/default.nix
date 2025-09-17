@@ -56,9 +56,9 @@
     };
 
     # lid settings
-    services.logind = {
-        lidSwitch = "suspend";
-        lidSwitchExternalPower = "lock";
+    services.logind.settings.Login = {
+        HandleLidSwitch = "suspend";
+        HandleLidSwitchExternalPower = "lock";
     };
 
     hardware.graphics.enable = true;

@@ -16,6 +16,7 @@
         htop
         starship
         neovim
+        tmux
         eza
         rofi
         feh
@@ -39,9 +40,15 @@
         nixd
         nix-diff
         luajitPackages.luarocks
+        zulu
 
         # Languages
         libgcc
+        pyright
+        nodejs_24
+
+        # Lockscreen
+        betterlockscreen
 
     ];
 }
