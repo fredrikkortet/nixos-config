@@ -12,7 +12,7 @@
 
     hardware.url = "github:nixos/nixos-hardware";
     nix-colors.url = "github:misterio77/nix-colors";
-    stylix.url = "github:danth/stylix";
+    #stylix.url = "github:danth/stylix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -20,10 +20,6 @@
     };
     disko = {
         url = "github:nix-community/disko";
-        inputs.nixpkgs.follows = "nixpkgs";
-    };
-    firefox-addons = {
-        url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
         inputs.nixpkgs.follows = "nixpkgs";
     };
     nur = {
