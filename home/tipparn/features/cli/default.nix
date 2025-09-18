@@ -39,11 +39,12 @@
         # Language tools 
         nixd
         nix-diff
+        cargo
         luajitPackages.luarocks
         zulu
 
         # Languages
-        libgcc
+        gcc
         pyright
         nodejs_24
 
