@@ -73,6 +73,14 @@
                 };
                 modules = [./hosts/laptop];
             };
+	    #Main framework
+            framework = lib.nixosSystem {
+                specialArgs = {
+                    inherit inputs outputs;
+                };
+                modules = [./hosts/framework];
+            };
+
         };
         homeConfigurations = {
         # ===================== home-manager Configurations ===================== #
@@ -93,6 +101,15 @@
                     inherit inputs outputs;
                 };
             };
+	    #Main framework
+            "tipparn@framework" = lib.homeManagerConfiguration {
+                modules = [./home/tipparn/laptop.nix ./home/tipparn/nixpkgs.nix];
+                pkgs = pkgsFor.x86_64-linux;
+                extraSpecialArgs = {
+                    inherit inputs outputs;
+                };
+            };
+
 
         };
     };
