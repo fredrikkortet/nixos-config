@@ -8,6 +8,7 @@
         ./zsh.nix
         ./bash.nix
         ./fzf.nix
+        ./gnugp.nix
         ./volumecontrol.nix
 
     ];
@@ -30,7 +31,6 @@
         tree-sitter
         inetutils
         alsa-utils
-
         xsettingsd
 
         # Laptop specific
