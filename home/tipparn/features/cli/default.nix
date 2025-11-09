@@ -8,6 +8,7 @@
         ./zsh.nix
         ./bash.nix
         ./fzf.nix
+        ./starship.nix
         ./gnugp.nix
         ./volumecontrol.nix
 
@@ -21,7 +22,6 @@
         eza
         rofi
         feh
-        fzf
         fd
         ripgrep
         openvpn
