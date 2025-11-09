@@ -24,7 +24,6 @@
 
     programs = {
         home-manager.enable = true;
-        git.enable = true;
     };
 
     home = {
@@ -33,7 +32,7 @@
         stateVersion = lib.mkDefault "22.05";
         sessionPath = ["$HOME/.local/bin"];
         sessionVariables = {
-            FLAKE = "$HOME/Documents/NixConfig";
+            FLAKE = "$HOME/flake";
         };
     };
 }

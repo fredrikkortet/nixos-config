@@ -3,7 +3,6 @@
   ...
 }: {
   imports = [
-    #./firefox.nix
     ./thunderbird.nix
     ./librewolf.nix
     ./brave.nix
