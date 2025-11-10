@@ -1,4 +1,5 @@
-{config, ...}: {
+{ config, ... }:
+{
   # Set as default terminal
   xdg.mimeApps = {
     associations.added = {
@@ -24,10 +25,10 @@
         };
       };
       cursor = {
-          style = "Block";
+        style = "Block";
       };
       scrolling = {
-          history = 10000;
+        history = 10000;
       };
       window = {
         opacity = 0.9;

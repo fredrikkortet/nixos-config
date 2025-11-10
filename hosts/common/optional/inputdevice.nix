@@ -1,13 +1,14 @@
 {
-    ...
-}: {
-    services = {
-        libinput.enable = true;
-        xserver = {
-            enable = true;
+  ...
+}:
+{
+  services = {
+    libinput.enable = true;
+    xserver = {
+      enable = true;
 
-            xkb.layout = "se";
-            xkb.variant = "";
-        };
+      xkb.layout = "se";
+      xkb.variant = "";
     };
+  };
 }

@@ -1,6 +1,7 @@
 {
-    pkgs,
-    ...
-}:{
-    home.packages = with pkgs; [keepassxc];
+  pkgs,
+  ...
+}:
+{
+  home.packages = with pkgs; [ keepassxc ];
 }

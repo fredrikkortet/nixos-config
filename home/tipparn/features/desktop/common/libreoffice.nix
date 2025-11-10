@@ -1,6 +1,7 @@
 {
-    pkgs,
-    ...
-}: {
-    home.packages = with pkgs; [libreoffice-qt6-fresh];
+  pkgs,
+  ...
+}:
+{
+  home.packages = with pkgs; [ libreoffice-qt6-fresh ];
 }

@@ -2,7 +2,8 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   console = {
     useXkbConfig = true;
     earlySetup = false;

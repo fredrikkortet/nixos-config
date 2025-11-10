@@ -1,6 +1,7 @@
 {
-    ...
-}: {
-    # Enable polkit
-    security.polkit.enable = true;
+  ...
+}:
+{
+  # Enable polkit
+  security.polkit.enable = true;
 }

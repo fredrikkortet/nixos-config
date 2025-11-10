@@ -5,33 +5,42 @@
   pkgs,
   inputs,
   ...
-}: let
-  commonDeps = with pkgs; [coreutils gnugrep systemd];
+}:
+let
+  commonDeps = with pkgs; [
+    coreutils
+    gnugrep
+    systemd
+  ];
   # Function to simplify making waybar outputs
-  mkScript = {
-    name ? "script",
-    deps ? [],
-    script ? "",
-  }:
-    lib.getExe (pkgs.writeShellApplication {
-      inherit name;
-      text = script;
-      runtimeInputs = commonDeps ++ deps;
-    });
+  mkScript =
+    {
+      name ? "script",
+      deps ? [ ],
+      script ? "",
+    }:
+    lib.getExe (
+      pkgs.writeShellApplication {
+        inherit name;
+        text = script;
+        runtimeInputs = commonDeps ++ deps;
+      }
+    );
   # Specialized for JSON outputs
-  mkScriptJson = {
-    name ? "script",
-    deps ? [],
-    script ? "",
-    text ? "",
-    tooltip ? "",
-    alt ? "",
-    class ? "",
-    percentage ? "",
-  }:
+  mkScriptJson =
+    {
+      name ? "script",
+      deps ? [ ],
+      script ? "",
+      text ? "",
+      tooltip ? "",
+      alt ? "",
+      class ? "",
+      percentage ? "",
+    }:
     mkScript {
       inherit name;
-      deps = [pkgs.jq] ++ deps;
+      deps = [ pkgs.jq ] ++ deps;
       script = ''
         ${script}
         jq -cn \
@@ -46,13 +55,14 @@
 
   swayCfg = config.wayland.windowManager.sway;
   hyprlandCfg = config.wayland.windowManager.hyprland;
-in {
+in
+{
   systemd.user.services.waybar = {
     Unit = {
       # Let it try to start a few more times
       StartLimitBurst = 30;
       # Reload instead of restarting
-      X-Restart-Triggers = lib.mkForce [];
+      X-Restart-Triggers = lib.mkForce [ ];
       #X-Reload-Triggers = [
       #  "${config.xdg.configFile."waybar/config".source}"
       #  "${config.xdg.configFile."waybar/style.css".source}"
@@ -62,7 +72,7 @@ in {
   programs.waybar = {
     enable = true;
     package = pkgs.waybar.overrideAttrs (oa: {
-      mesonFlags = (oa.mesonFlags or []) ++ ["-Dexperimental=true"];
+      mesonFlags = (oa.mesonFlags or [ ]) ++ [ "-Dexperimental=true" ];
     });
     systemd.enable = true;
     settings = {
@@ -72,20 +82,21 @@ in {
         height = 40;
         margin = "6";
         position = "top";
-        modules-left =
-          ["custom/menu"]
-          ++ (lib.optionals swayCfg.enable [
-            "sway/workspaces"
-            "sway/mode"
-          ])
-          ++ (lib.optionals hyprlandCfg.enable [
-            "hyprland/workspaces"
-            "hyprland/submap"
-          ])
-          ++ [
-            "custom/currentplayer"
-            "custom/player"
-          ];
+        modules-left = [
+          "custom/menu"
+        ]
+        ++ (lib.optionals swayCfg.enable [
+          "sway/workspaces"
+          "sway/mode"
+        ])
+        ++ (lib.optionals hyprlandCfg.enable [
+          "hyprland/workspaces"
+          "hyprland/submap"
+        ])
+        ++ [
+          "custom/currentplayer"
+          "custom/player"
+        ];
 
         modules-center = [
           "cpu"
@@ -119,7 +130,7 @@ in {
         };
         "custom/gpu" = {
           interval = 5;
-          exec = mkScript {script = "cat /sys/class/drm/card*/device/gpu_busy_percent | head -1";};
+          exec = mkScript { script = "cat /sys/class/drm/card*/device/gpu_busy_percent | head -1"; };
           format = "󰒋  {}%";
         };
         memory = {
@@ -188,27 +199,34 @@ in {
             deps = lib.optional hyprlandCfg.enable hyprlandCfg.package;
             text = "";
             tooltip = ''$(grep PRETTY_NAME /etc/os-release | cut -d '"' -f2)'';
-            class = let
-              isFullScreen =
-                if hyprlandCfg.enable
-                then "hyprctl activewindow -j | jq -e '.fullscreen' &>/dev/null"
-                else "false";
-            in "$(if ${isFullScreen}; then echo fullscreen; fi)";
+            class =
+              let
+                isFullScreen =
+                  if hyprlandCfg.enable then "hyprctl activewindow -j | jq -e '.fullscreen' &>/dev/null" else "false";
+              in
+              "$(if ${isFullScreen}; then echo fullscreen; fi)";
           };
         };
         "custom/hostname" = {
-          exec = mkScript {script = ''
-            echo "$USER@$HOSTNAME"
-          '';};
-          on-click = mkScript {script = ''
-            systemctl --user restart waybar
-          '';};
+          exec = mkScript {
+            script = ''
+              echo "$USER@$HOSTNAME"
+            '';
+          };
+          on-click = mkScript {
+            script = ''
+              systemctl --user restart waybar
+            '';
+          };
         };
         "custom/unread-mail" = {
           interval = 5;
           return-type = "json";
           exec = mkScriptJson {
-            deps = [pkgs.findutils pkgs.procps];
+            deps = [
+              pkgs.findutils
+              pkgs.procps
+            ];
             script = ''
               count=$(find ~/Mail/*/Inbox/new -type f | wc -l)
               if pgrep mbsync &>/dev/null; then
@@ -235,7 +253,7 @@ in {
           interval = 2;
           return-type = "json";
           exec = mkScriptJson {
-            deps = [pkgs.playerctl];
+            deps = [ pkgs.playerctl ];
             script = ''
               all_players=$(playerctl -l 2>/dev/null)
               selected_player="$(playerctl status -f "{{playerName}}" 2>/dev/null || true)"
@@ -260,14 +278,14 @@ in {
         };
         "custom/player" = {
           exec-if = mkScript {
-            deps = [pkgs.playerctl];
+            deps = [ pkgs.playerctl ];
             script = ''
               selected_player="$(playerctl status -f "{{playerName}}" 2>/dev/null || true)"
               playerctl status -p "$selected_player" 2>/dev/null
             '';
           };
           exec = mkScript {
-            deps = [pkgs.playerctl];
+            deps = [ pkgs.playerctl ];
             script = ''
               selected_player="$(playerctl status -f "{{playerName}}" 2>/dev/null || true)"
               playerctl metadata -p "$selected_player" \
@@ -284,14 +302,14 @@ in {
             "Stopped" = "󰓛";
           };
           on-click = mkScript {
-            deps = [pkgs.playerctl];
+            deps = [ pkgs.playerctl ];
             script = "playerctl play-pause";
           };
         };
         "custom/rfkill" = {
           interval = 1;
           exec-if = mkScript {
-            deps = [pkgs.util-linux];
+            deps = [ pkgs.util-linux ];
             script = "rfkill | grep '\<blocked\>'";
           };
         };
