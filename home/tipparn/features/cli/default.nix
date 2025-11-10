@@ -38,6 +38,7 @@
 
         # Language tools 
         nixd
+        nixfmt-rfc-style
         nix-diff
         cargo
         luajitPackages.luarocks
