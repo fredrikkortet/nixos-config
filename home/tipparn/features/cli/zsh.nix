@@ -17,6 +17,19 @@
         prezto = {
             enable = true;
             tmux.autoStartLocal = true;
+            tmux.defaultSessionName = "Home";
+            pmodules = [
+                "environment"
+                "terminal"
+                "editor"
+                "history"
+                "directory"
+                "spectrum"
+                "utility"
+                "completion"
+                "prompt"
+                "tmux"
+            ];
         };
     };
 }
