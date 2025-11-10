@@ -6,10 +6,9 @@
 {
   programs.git = {
     enable = true;
-    package = pkgs.gitAndTools.gitFull;
-    userName = "Fredrik kortetjärvi";
-    userEmail = lib.mkDefault "49959669+fredrikkortet@users.noreply.github.com";
-    extraConfig = {
+    settings = {
+      user.name = "Fredrik kortetjärvi";
+      user.email = lib.mkDefault "49959669+fredrikkortet@users.noreply.github.com";
       init.defaultBranch = "main";
       diff.algorithm = "histogram";
       log.date = "iso";
