@@ -11,15 +11,14 @@
     ./fzf.nix
     ./starship.nix
     ./gnugp.nix
+    ./tmux.nix
     ./volumecontrol.nix
 
   ];
   home.packages = with pkgs; [
     ripgrep
     htop
-    starship
     neovim
-    tmux
     eza
     rofi
     feh
