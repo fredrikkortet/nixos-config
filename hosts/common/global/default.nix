@@ -9,6 +9,7 @@
     ./locale.nix
     ./zsh.nix
     ./nix.nix
+    ./display-manager.nix
   ];
   #++ (builtins.attrValues outputs.nixosModules);
 
