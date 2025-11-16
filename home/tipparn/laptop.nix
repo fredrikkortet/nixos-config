@@ -5,7 +5,7 @@
   imports = [
     ./global
     ./features/desktop/common
-    #./features/desktop/hyprland
+    ./features/desktop/hyprland
     ./features/desktop/wireless
   ];
 

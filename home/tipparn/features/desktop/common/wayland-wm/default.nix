@@ -1,13 +1,13 @@
 { pkgs, ... }:
 {
   imports = [
-    ./alacritty.nix
+    #./alacritty.nix
     ./cliphist.nix
     ./swayidle.nix
     ./swaylock.nix
     ./waybar.nix
     ./wofi.nix
-    ./zathura.nix
+    #./zathura.nix
     ./waypipe.nix
   ];
 
