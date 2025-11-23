@@ -118,7 +118,7 @@
         #Main framework
         "tipparn@framework" = lib.homeManagerConfiguration {
           modules = [
-            ./home/tipparn/laptop.nix
+            ./home/tipparn/framework.nix
             ./home/tipparn/nixpkgs.nix
           ];
           pkgs = pkgsFor.x86_64-linux;

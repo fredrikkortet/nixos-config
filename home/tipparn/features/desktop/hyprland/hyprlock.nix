@@ -1,4 +1,5 @@
-{config, lib, ...}: {
+{ config, lib, ... }:
+{
   programs.hyprlock = {
     enable = true;
     settings = {
@@ -54,12 +55,14 @@
 
   wayland.windowManager.hyprland = {
     settings = {
-      bind = let
-        hyprlock = lib.getExe config.programs.hyprlock.package;
-      in [
-        "SUPER,backspace,exec,${hyprlock}"
-        "SUPER,XF86Calculator,exec,${hyprlock}"
-      ];
+      bind =
+        let
+          hyprlock = lib.getExe config.programs.hyprlock.package;
+        in
+        [
+          "SUPER,backspace,exec,${hyprlock}"
+          "SUPER,XF86Calculator,exec,${hyprlock}"
+        ];
     };
   };
 }

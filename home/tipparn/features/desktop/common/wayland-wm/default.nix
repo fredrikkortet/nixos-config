@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    #./alacritty.nix
     ./cliphist.nix
     ./swayidle.nix
     ./swaylock.nix

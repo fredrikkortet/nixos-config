@@ -9,7 +9,7 @@ in
 {
   users.mutableUsers = false;
   users.users.superpower = {
-    isSystemUser = true; 
+    isSystemUser = true;
     shell = pkgs.zsh;
     extraGroups = ifTheyExist [
       "audio"

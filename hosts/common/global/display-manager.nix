@@ -1,15 +1,23 @@
-{config, lib, pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   users.groups.greeter = { };
   users.users.greeter = {
-      isSystemUser = true;
-      group = "greeter";
-    };
+    isSystemUser = true;
+    group = "greeter";
+  };
   services = {
     displayManager = {
       enable = true;
       # Export user sessions to system
-      sessionPackages = lib.flatten (lib.mapAttrsToList (_: v: v.home.exportedSessionPackages) config.home-manager.users);
-      ly = {
+      sessionPackages = lib.flatten (
+        lib.mapAttrsToList (_: v: v.home.exportedSessionPackages) config.home-manager.users
+      );
+      sddm = {
         enable = true;
       };
     };
