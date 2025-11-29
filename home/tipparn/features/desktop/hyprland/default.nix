@@ -43,8 +43,8 @@ in
     enable = true;
     settings = {
       general = {
-        gaps_in = 5;
-        gaps_out = 2;
+        gaps_in = 0;
+        gaps_out = 0;
         border_size = 2;
         allow_tearing = false;
         #"col.active_border" = rgba config.colorscheme.colors.primary "ee";
@@ -65,9 +65,9 @@ in
       };
       decoration = {
         active_opacity = 1.0;
-        inactive_opacity = 0.85;
+        inactive_opacity = 1.0;
         fullscreen_opacity = 1.0;
-        rounding = 7;
+        rounding = 0;
         blur = {
           enabled = false;
           size = 4;

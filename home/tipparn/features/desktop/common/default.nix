@@ -11,7 +11,6 @@
     ./font.nix
     ./gtk.nix
     ./pavucontrol.nix
-    ./keepassxc.nix
     ./zathura.nix
     ./alacritty.nix
     ./logseq.nix

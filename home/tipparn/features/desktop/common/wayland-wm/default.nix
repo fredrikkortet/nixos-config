@@ -6,8 +6,6 @@
     ./swaylock.nix
     ./waybar.nix
     ./wofi.nix
-    #./zathura.nix
-    ./waypipe.nix
   ];
 
   xdg.mimeApps.enable = true;
