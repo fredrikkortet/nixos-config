@@ -12,6 +12,7 @@
       init.defaultBranch = "main";
       diff.algorithm = "histogram";
       log.date = "iso";
+      core.editor = "nvim";
     };
     lfs.enable = true;
     ignores = [
