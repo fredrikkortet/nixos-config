@@ -23,7 +23,7 @@
   ];
 
   networking = {
-    hostName = "laptop";
+    hostName = "framework";
   };
 
   boot = {
