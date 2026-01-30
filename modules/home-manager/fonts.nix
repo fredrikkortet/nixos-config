@@ -19,7 +19,7 @@ let
     };
     size = lib.mkOption {
       type = lib.types.int;
-      default = 8;
+      default = 15;
       description = "Size in pixels for ${kind} font profile";
       example = "14";
     };
