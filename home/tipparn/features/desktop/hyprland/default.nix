@@ -104,6 +104,8 @@ in
       ];
       # Normal binding
       bind = [
+        "SUPERSHIFT,p,exec,wofi --show drun"
+        "SUPERSHIFT,x,exec,powermenu"
         "SUPERSHIFT,Return,exec,${defaultApp "x-scheme-handler/terminal"}"
         "SUPERSHIFT,w,exec,${defaultApp "x-scheme-handler/https"}"
         ",Print,exec,${grimblast} --freeze copy area"
