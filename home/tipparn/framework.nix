@@ -16,6 +16,7 @@
       height = 1920;
       workspace = "1";
       primary = true;
+      refreshRate = 120;
     }
   ];
 }
