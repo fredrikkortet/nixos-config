@@ -59,27 +59,27 @@
   services.keyd = {
     enable = true;
     keyboards.default = {
-        ids = [ "*" ];
-        settings = {
-          main = {
-            capslock = "overload(control, esc)";
-            rightalt = "layer(number_one)";
-          };
-          number_one = {
-            # Home row
-            a = "G-1";
-            s = "G-2";
-            d = "G-3";
-            f = "G-4";
-            g = "G-102nd";
-            h = "G-rightbrace";
-            j = "G-7";
-            k = "G-8";
-            l = "G-9";
-            semicolon = "G-0";
-            apostrophe = "G-minus";
-          };
+      ids = [ "*" ];
+      settings = {
+        main = {
+          capslock = "overload(control, esc)";
+          rightalt = "layer(number_one)";
         };
+        number_one = {
+          # Home row
+          a = "G-1";
+          s = "G-2";
+          d = "G-3";
+          f = "G-4";
+          g = "G-102nd";
+          h = "G-rightbrace";
+          j = "G-7";
+          k = "G-8";
+          l = "G-9";
+          semicolon = "G-0";
+          apostrophe = "G-minus";
+        };
+      };
     };
   };
 
