@@ -5,6 +5,7 @@
 {
   imports = [
     ./thunderbird.nix
+    ./antigravity.nix
     ./librewolf.nix
     ./brave.nix
     ./libreoffice.nix

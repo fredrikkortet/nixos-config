@@ -19,6 +19,7 @@
     ripgrep
     htop
     neovim
+    opencode
     eza
     rofi
     feh
