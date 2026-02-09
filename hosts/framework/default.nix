@@ -14,7 +14,7 @@
 
     ../common/optional/pipewire.nix
     ../common/optional/quietboot.nix
-    ../common/optional/qtile.nix
+    #../common/optional/qtile.nix
     ../common/optional/polkit.nix
     ../common/optional/inputdevice.nix
     ../common/optional/ssh.nix

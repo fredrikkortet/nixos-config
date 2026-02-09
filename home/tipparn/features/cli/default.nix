@@ -24,7 +24,6 @@
     rofi
     feh
     fd
-    ripgrep
     openvpn
     zip
     unzip
