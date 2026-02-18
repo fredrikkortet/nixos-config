@@ -87,9 +87,9 @@ in
       animations = {
         enabled = false;
       };
-      # Set cursor theme macOS and size 12
+      # Set cursor theme macOS and size 30
       exec = [
-        "hyprctl setcursor macOS 12"
+        "hyprctl setcursor macOS 30"
       ];
       # Will repeat when held, also works when locked
       bindel = [
