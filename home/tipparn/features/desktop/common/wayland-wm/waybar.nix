@@ -74,12 +74,91 @@ in
     package = pkgs.waybar.overrideAttrs (oa: {
       mesonFlags = (oa.mesonFlags or [ ]) ++ [ "-Dexperimental=true" ];
     });
+    style = ''
+        * {
+            border: none;
+            border-radius: 16px;
+            font-family: ${config.fontProfiles.monospace.name};
+            font-size: 13px;
+            font-style: normal;
+            min-height: 0;
+            font-weight: bold;
+            color: #cdd6f4;
+        }
+        window#waybar {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding-top: 10px;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #workspaces {
+            background: #181825;
+            margin: 6.5px 5px;
+            padding: 8px 5px;
+            border-radius: 16px;
+            border: solid 2px rgba(0,0,0,0.5);
+            font-weight: bold;
+            font-style: normal;
+        }
+        #workspaces button {
+            padding: 0px 5px;
+            margin: 0px 3px;
+            border-radius: 16px;
+            color: #cdd6f4;
+            background-color: #11111b;
+            transition: all 0.2s ease-in-out;
+        }
+        #workspaces button.active {
+            color: #181825;
+            background-color: #11111b;
+            border-radius: 16px;
+            min-width: 40px;
+            background-size: 400% 400%;
+            transition: all 0.2s ease-in-out;
+        }
+        #workspaces button:hover {
+            background-color: #313244;
+            color: #181825;
+            border-radius: 16px;
+            min-width: 30px;
+            background-size: 400% 400%;
+            transition: all 0.2s ease-in-out;
+        }
+        #cpu,
+        #custom-gpu,
+        #memory,
+        #clock,
+        #custom-unread-mail {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 23px;
+            border: solid 0.4px #8394ff;
+            margin: 12px 2px;
+            padding: 2px 6px;
+            color: #123434;
+            font-size: 12px;
+        }
+
+        #tray,
+        #custom-rfkill,
+        #network,
+        #pulseaudio,
+        #battery {
+            padding: 0 1px;
+            margin: 14px 1px;
+            border: solid 2px #aeedfe;
+            background-color: #123412;
+            font-size: 12px;
+        }
+        
+    '';
     systemd.enable = true;
     settings = {
       primary = {
         exclusive = false;
         passthrough = false;
-        height = 40;
+        height = 45;
         margin = "0";
         position = "top";
         modules-left = [
