@@ -2,9 +2,13 @@
   lib,
   config,
   pkgs,
+  colorscheme,
   ...
 }:
 let
+  rgb = color: "rgb(${lib.removePrefix "#" color})";
+  rgba = color: alpha: "rgba(${lib.removePrefix "#" color}${alpha})";
+
   grimblast = lib.getExe pkgs.grimblast;
   pactl = lib.getExe' pkgs.pulseaudio "pactl";
   defaultApp = type: "${lib.getExe pkgs.handlr-regex} launch ${type}";
@@ -47,8 +51,8 @@ in
         gaps_out = 0;
         border_size = 2;
         allow_tearing = false;
-        #"col.active_border" = rgba config.colorscheme.colors.primary "ee";
-        #"col.inactive_border" = rgba config.colorscheme.colors.surface "aa";
+        "col.active_border" = rgb colorscheme.base09;
+        "col.inactive_border" = rgba colorscheme.base01 "aa";
 
       };
       cursor.inactive_timeout = 4;

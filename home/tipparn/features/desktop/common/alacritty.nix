@@ -12,6 +12,7 @@
 
   programs.alacritty = {
     enable = true;
+    theme = "dracula";
     settings = {
       font = {
         size = config.fontProfiles.monospace.size;

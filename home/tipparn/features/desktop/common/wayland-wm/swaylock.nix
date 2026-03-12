@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  colorscheme,
   ...
 }:
 {
@@ -13,7 +14,8 @@
 
       font = config.fontProfiles.regular.name;
       font-size = config.fontProfiles.regular.size + 3;
-
+      color = "${colorscheme.base04}";
+      text-color = "${colorscheme.base05}";
       line-uses-inside = true;
       disable-caps-lock-text = true;
       indicator-caps-lock = true;

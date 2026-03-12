@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  colorscheme,
   ...
 }:
 {
@@ -22,26 +23,26 @@
           border-radius: 17px;
           background-color: rgba(30, 30, 30, 0.99);
           margin: 0px;
-          border: 1px solid #bd93f9;
+          border: 1px solid #${colorscheme.base0E};
           }
 
       #input {
           margin: 5px;
           border: none;
-          color: #f8f8f2;
-          background-color: #44475a;
+          color: #${colorscheme.base05};
+          background-color: #${colorscheme.base02};
           }
 
       #inner-box {
           margin: 5px;
           border: none;
-          background-color: #282a36;
+          background-color: #${colorscheme.base00};
           }
 
       #outer-box {
           margin: 5px;
           border: none;
-          background-color: #282a36;
+          background-color: #${colorscheme.base00};
           }
 
       #scroll {
@@ -52,19 +53,19 @@
       #text {
           margin: 5px;
           border: none;
-          color: #f8f8f2;
+          color: #${colorscheme.base05};
           } 
 
       #entry.activatable #text {
-          color: #282a36;
+          color: #${colorscheme.base00};
           }
 
       #entry > * {
-          color: #f8f8f2;
+          color: #${colorscheme.base05};
           }
 
       #entry:selected {
-          background-color: #44475a;
+          background-color: #${colorscheme.base02};
           }
 
       #entry:selected #text {
