@@ -3,6 +3,7 @@
   config,
   lib,
   pkgs,
+  colorscheme,
   inputs,
   ...
 }:
@@ -83,7 +84,7 @@ in
             font-style: normal;
             min-height: 0;
             font-weight: bold;
-            color: #cdd6f4;
+            color: #${colorscheme.base0F};
         }
         window#waybar {
             background-color: rgba(0, 0, 0, 0.5);
@@ -94,11 +95,11 @@ in
             margin-right: 10px;
         }
         #workspaces {
-            background: #181825;
+            background: #${colorscheme.base00};
             margin: 6.5px 5px;
             padding: 8px 5px;
             border-radius: 16px;
-            border: solid 2px rgba(0,0,0,0.5);
+            border: solid 2px #${colorscheme.base02};
             font-weight: bold;
             font-style: normal;
         }
@@ -106,21 +107,21 @@ in
             padding: 0px 5px;
             margin: 0px 3px;
             border-radius: 16px;
-            color: #cdd6f4;
-            background-color: #11111b;
+            color: #${colorscheme.base0F};
+            background-color: #${colorscheme.base01};
             transition: all 0.2s ease-in-out;
         }
         #workspaces button.active {
-            color: #181825;
-            background-color: #11111b;
+            color: #${colorscheme.base00};
+            background-color: #${colorscheme.base0E};
             border-radius: 16px;
             min-width: 40px;
             background-size: 400% 400%;
             transition: all 0.2s ease-in-out;
         }
         #workspaces button:hover {
-            background-color: #313244;
-            color: #181825;
+            background-color: #${colorscheme.base03};
+            color: #${colorscheme.base00};
             border-radius: 16px;
             min-width: 30px;
             background-size: 400% 400%;
@@ -133,10 +134,10 @@ in
         #custom-unread-mail {
             background: rgba(0, 0, 0, 0.5);
             border-radius: 23px;
-            border: solid 0.4px #8394ff;
+            border: solid 0.4px #${colorscheme.base0A};
             margin: 12px 2px;
             padding: 2px 6px;
-            color: #123434;
+            color: #${colorscheme.base05};
             font-size: 12px;
         }
 
@@ -147,8 +148,9 @@ in
         #battery {
             padding: 0 1px;
             margin: 14px 1px;
-            border: solid 2px #aeedfe;
-            background-color: #123412;
+            border: solid 2px #${colorscheme.base02};
+            background-color: #${colorscheme.base01};
+            color: #${colorscheme.base0F};
             font-size: 12px;
         }
         
@@ -162,7 +164,6 @@ in
         margin = "0";
         position = "top";
         modules-left = [
-          "custom/menu"
         ]
         ++ (lib.optionals swayCfg.enable [
           "sway/workspaces"

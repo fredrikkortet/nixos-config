@@ -8,6 +8,7 @@
     ./antigravity.nix
     ./librewolf.nix
     ./brave.nix
+    ./colorscheme.nix
     ./libreoffice.nix
     ./font.nix
     ./gtk.nix
