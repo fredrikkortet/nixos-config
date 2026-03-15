@@ -49,7 +49,7 @@
           hyprlock = lib.getExe config.programs.hyprlock.package;
         in
         [
-          "SUPER,backspace,exec,${hyprlock}"
+          "SUPER,l,exec,${hyprlock}"
           "SUPER,XF86Calculator,exec,${hyprlock}"
         ];
     };
