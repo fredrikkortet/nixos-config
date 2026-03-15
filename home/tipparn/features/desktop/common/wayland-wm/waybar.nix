@@ -76,84 +76,84 @@ in
       mesonFlags = (oa.mesonFlags or [ ]) ++ [ "-Dexperimental=true" ];
     });
     style = ''
-        * {
-            border: none;
-            border-radius: 16px;
-            font-family: ${config.fontProfiles.monospace.name};
-            font-size: 13px;
-            font-style: normal;
-            min-height: 0;
-            font-weight: bold;
-            color: #${colorscheme.base0F};
-        }
-        window#waybar {
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            padding-top: 10px;
-            margin-top: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-        #workspaces {
-            background: #${colorscheme.base00};
-            margin: 6.5px 5px;
-            padding: 8px 5px;
-            border-radius: 16px;
-            border: solid 2px #${colorscheme.base02};
-            font-weight: bold;
-            font-style: normal;
-        }
-        #workspaces button {
-            padding: 0px 5px;
-            margin: 0px 3px;
-            border-radius: 16px;
-            color: #${colorscheme.base0F};
-            background-color: #${colorscheme.base01};
-            transition: all 0.2s ease-in-out;
-        }
-        #workspaces button.active {
-            color: #${colorscheme.base00};
-            background-color: #${colorscheme.base0E};
-            border-radius: 16px;
-            min-width: 40px;
-            background-size: 400% 400%;
-            transition: all 0.2s ease-in-out;
-        }
-        #workspaces button:hover {
-            background-color: #${colorscheme.base03};
-            color: #${colorscheme.base00};
-            border-radius: 16px;
-            min-width: 30px;
-            background-size: 400% 400%;
-            transition: all 0.2s ease-in-out;
-        }
-        #cpu,
-        #custom-gpu,
-        #memory,
-        #clock,
-        #custom-unread-mail {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 23px;
-            border: solid 0.4px #${colorscheme.base0A};
-            margin: 12px 2px;
-            padding: 2px 6px;
-            color: #${colorscheme.base05};
-            font-size: 12px;
-        }
+      * {
+          border: none;
+          border-radius: 16px;
+          font-family: ${config.fontProfiles.monospace.name};
+          font-size: 13px;
+          font-style: normal;
+          min-height: 0;
+          font-weight: bold;
+          color: #${colorscheme.base0F};
+      }
+      window#waybar {
+          background-color: rgba(0, 0, 0, 0.5);
+          border-radius: 10px;
+          padding-top: 10px;
+          margin-top: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
+      }
+      #workspaces {
+          background: #${colorscheme.base00};
+          margin: 6.5px 5px;
+          padding: 8px 5px;
+          border-radius: 16px;
+          border: solid 2px #${colorscheme.base02};
+          font-weight: bold;
+          font-style: normal;
+      }
+      #workspaces button {
+          padding: 0px 5px;
+          margin: 0px 3px;
+          border-radius: 16px;
+          color: #${colorscheme.base0F};
+          background-color: #${colorscheme.base01};
+          transition: all 0.2s ease-in-out;
+      }
+      #workspaces button.active {
+          color: #${colorscheme.base00};
+          background-color: #${colorscheme.base0E};
+          border-radius: 16px;
+          min-width: 40px;
+          background-size: 400% 400%;
+          transition: all 0.2s ease-in-out;
+      }
+      #workspaces button:hover {
+          background-color: #${colorscheme.base03};
+          color: #${colorscheme.base00};
+          border-radius: 16px;
+          min-width: 30px;
+          background-size: 400% 400%;
+          transition: all 0.2s ease-in-out;
+      }
+      #cpu,
+      #custom-gpu,
+      #memory,
+      #clock,
+      #custom-unread-mail {
+          background: rgba(0, 0, 0, 0.5);
+          border-radius: 23px;
+          border: solid 0.4px #${colorscheme.base0A};
+          margin: 12px 2px;
+          padding: 2px 6px;
+          color: #${colorscheme.base05};
+          font-size: 12px;
+      }
 
-        #tray,
-        #custom-rfkill,
-        #network,
-        #pulseaudio,
-        #battery {
-            padding: 0 1px;
-            margin: 14px 1px;
-            border: solid 2px #${colorscheme.base02};
-            background-color: #${colorscheme.base01};
-            color: #${colorscheme.base0F};
-            font-size: 12px;
-        }
-        
+      #tray,
+      #custom-rfkill,
+      #network,
+      #pulseaudio,
+      #battery {
+          padding: 0 1px;
+          margin: 14px 1px;
+          border: solid 2px #${colorscheme.base02};
+          background-color: #${colorscheme.base01};
+          color: #${colorscheme.base0F};
+          font-size: 12px;
+      }
+
     '';
     systemd.enable = true;
     settings = {

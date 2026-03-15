@@ -20,7 +20,7 @@
       sddm = {
         enable = true;
         extraPackages = [
-            pkgs.kdePackages.qtmultimedia
+          pkgs.kdePackages.qtmultimedia
         ];
         theme = "${pkgs.sddm-astronaut}/share/sddm/themes/sddm-astronaut-theme";
         wayland.enable = true;
