@@ -33,7 +33,7 @@
     stateVersion = lib.mkDefault "22.05";
     sessionPath = [ "$HOME/.local/bin" ];
     sessionVariables = {
-      FLAKE = "$HOME/flake";
+      FLAKE = "$HOME/flakes";
     };
   };
 }
