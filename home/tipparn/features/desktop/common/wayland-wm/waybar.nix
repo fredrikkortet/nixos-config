@@ -158,11 +158,12 @@ in
     systemd.enable = true;
     settings = {
       primary = {
-        exclusive = false;
+        exclusive = true;
         passthrough = false;
         height = 45;
         margin = "0";
         position = "top";
+        layer = "top";
         modules-left = [
         ]
         ++ (lib.optionals swayCfg.enable [
