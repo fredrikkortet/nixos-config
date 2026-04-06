@@ -14,6 +14,7 @@
       log.date = "iso";
       core.editor = "nvim";
     };
+    signing.format = "openpgp";
     lfs.enable = true;
     ignores = [
       ".direnv"

@@ -6,6 +6,7 @@
 {
   gtk = {
     enable = true;
+    gtk4.theme = null;
     font = {
       inherit (config.fontProfiles.regular) name size;
     };
