@@ -16,14 +16,13 @@
     ./pavucontrol.nix
     ./zathura.nix
     ./alacritty.nix
-    ./logseq.nix
+    #./logseq.nix
   ];
 
   home.packages = [
     pkgs.libnotify
     pkgs.dunst
     pkgs.handlr-regex
-    pkgs.arandr
     (pkgs.writeShellScriptBin "xterm" ''
       handlr launch x-scheme-handler/terminal -- "$@"
     '')

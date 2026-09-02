@@ -32,6 +32,7 @@
     inetutils
     alsa-utils
     xsettingsd
+    nfs-utils
 
     # Laptop specific
     brightnessctl

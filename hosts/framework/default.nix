@@ -32,9 +32,16 @@
       "aarch64-linux"
       "i686-linux"
     ];
-    initrd.kernelModules = [ "amdgpu" ];
-    initrd.luks.devices."luks-5d80e3bc-696c-4342-9354-79ca16fd89fb".device =
-      "/dev/disk/by-uuid/5d80e3bc-696c-4342-9354-79ca16fd89fb";
+    initrd = {
+        kernelModules = [ "amdgpu" ];
+        systemd.enable = true;
+        luks.devices."luks-5d80e3bc-696c-4342-9354-79ca16fd89fb" = {
+            device = "/dev/disk/by-uuid/5d80e3bc-696c-4342-9354-79ca16fd89fb";
+            crypttabExtraOpts = [
+                "fido2-device=auto"
+            ];
+        };
+    };
     loader = {
       efi = {
         canTouchEfiVariables = true;
