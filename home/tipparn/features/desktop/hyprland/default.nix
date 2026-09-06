@@ -62,7 +62,6 @@ in
       };
       dwindle = {
         split_width_multiplier = 1.35;
-        pseudotile = true;
       };
       misc = {
         disable_hyprland_logo = true;
