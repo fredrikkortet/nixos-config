@@ -40,7 +40,6 @@
         "SUPERSHIFT,f,fullscreen,0"
         "SUPERSHIFT,space,togglefloating"
 
-
         "SUPER,g,togglegroup"
         "SUPER,t,lockactivegroup,toggle"
         "SUPER,tab,changegroupactive,f"

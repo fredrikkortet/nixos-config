@@ -13,6 +13,7 @@
     hardware.url = "github:nixos/nixos-hardware";
     nix-colors.url = "github:misterio77/nix-colors";
     #stylix.url = "github:danth/stylix";
+    hermes-agent.url = "github:NousResearch/hermes-agent";
 
     home-manager = {
       url = "github:nix-community/home-manager";

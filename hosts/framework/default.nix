@@ -33,14 +33,14 @@
       "i686-linux"
     ];
     initrd = {
-        kernelModules = [ "amdgpu" ];
-        systemd.enable = true;
-        luks.devices."luks-5d80e3bc-696c-4342-9354-79ca16fd89fb" = {
-            device = "/dev/disk/by-uuid/5d80e3bc-696c-4342-9354-79ca16fd89fb";
-            crypttabExtraOpts = [
-                "fido2-device=auto"
-            ];
-        };
+      kernelModules = [ "amdgpu" ];
+      systemd.enable = true;
+      luks.devices."luks-5d80e3bc-696c-4342-9354-79ca16fd89fb" = {
+        device = "/dev/disk/by-uuid/5d80e3bc-696c-4342-9354-79ca16fd89fb";
+        crypttabExtraOpts = [
+          "fido2-device=auto"
+        ];
+      };
     };
     loader = {
       efi = {

@@ -13,7 +13,8 @@
     ./gnugp.nix
     ./tmux.nix
     ./volumecontrol.nix
-
+    ./hermes.nix
+    ./sops.nix
   ];
   home.packages = with pkgs; [
     ripgrep

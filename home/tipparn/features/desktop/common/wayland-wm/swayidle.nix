@@ -34,7 +34,7 @@ in
 {
   services.swayidle = {
     enable = true;
-    systemdTargets = ["graphical-session.target"];
+    systemdTargets = [ "graphical-session.target" ];
     timeouts =
       # Lock screen
       [
